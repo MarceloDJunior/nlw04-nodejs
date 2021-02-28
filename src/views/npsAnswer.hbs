@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <style>
+    body {
+      font-family: 'Roboto', sans-serif;
+      font-weight: 300;
+    }
+
+    .container {
+      width: 100%;
+      min-height: 100vh;
+      background: rgb(240, 240, 240);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .content {
+      border-top: 4px solid #e93a34;
+      width: 800px;
+      width: 760px;
+      padding: 30px 40px 15px;
+      display: flex;
+      flex-direction: column;
+      background: #fff;
+      -webkit-box-shadow: 0px 0px 9px 2px rgba(186, 186, 186, 1);
+      -moz-box-shadow: 0px 0px 9px 2px rgba(186, 186, 186, 1);
+      box-shadow: 0px 0px 9px 2px rgba(186, 186, 186, 1);
+    }
+
+    #loaded {
+      display: none;
+    }
+
+    #loading {
+      padding: 30px 0 45px;
+      text-align: center;
+    }
+
+    h3 {
+      margin: 10px 0 30px;
+      font-size: 28px;
+    }
+
+    strong {
+      display: inline !important;
+    }
+  </style>
+  <div class="container">
+    <div class="content">
+
+      <div id="loaded">
+      <h3>Muito obrigado por responder!</h3>
+      <div>Olá <strong>{{name}}</strong>, muito obrigado por ter tirado um tempo para nos dar o seu feedback. Somente
+        assim
+        poderemos melhorar cada vez mais o nosso serviço.
+        Sua opinião é muito importante para nós.</div>
+      <h4>Equipe | <strong>NLW</strong></h4>
+      </div>
+      <div id="loading">
+        <img src="https://cdnjs.cloudflare.com/ajax/libs/galleriffic/2.0.1/css/loader.gif"/>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    setTimeout(() => {
+    document.getElementById("loading").style.display = "none";
+    document.getElementById("loaded").style.display = "block";
+    }, 1000)
+  </script>
+</body>
+
+</html>

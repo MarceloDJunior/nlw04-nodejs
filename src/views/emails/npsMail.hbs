@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <style>
+    .container {
+      width: 100%;
+      min-height: 100vh;
+      background: rgb(240, 240, 240);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+    }
+
+    .content {
+      border-top: 4px solid #e93a34;
+      background: #fff;
+      padding: 20px 30px;
+      width: 580px;
+      max-width: 100%;
+      justify-content: center;
+      align-items: center;
+      align-content: center;
+      display: flex;
+      flex-direction: column;
+      -webkit-box-shadow: 0px 0px 9px 2px rgb(186 186 186);
+      -moz-box-shadow: 0px 0px 9px 2px rgba(186, 186, 186, 1);
+      box-shadow: 0px 0px 9px 2px rgb(186 186 186);
+    }
+
+    h3 {
+      margin: 25px 0 10px;
+    }
+
+    .value {
+      margin: 3px;
+      background: #e93a34;
+      color: #fff;
+      border-radius: 50%;
+      width: 40px;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      text-decoration: none;
+      cursor: pointer;
+    }
+
+    .level {
+      display: flex;
+      margin: 10px;
+      justify-content: space-between;
+      width: 460px;
+    }
+
+    .answers {
+      width: 466px;
+      display: flex;
+      justify-content: space-between;
+    }
+  </style>
+  <div class="container">
+    <div class="content">
+      <br />
+      <label>Olá <strong>{{name}}</strong>! Tudo bem?</label>
+
+      <h3>{{title}}</h3>
+      <br />
+      <div>{{description}}</div>
+      <br />
+
+      <div class="level">
+        <span>Pouco provável</span>
+        <span>Muito provável</span>
+      </div>
+
+      <div class="answers">
+        <a class="value" href="{{ link }}/1?u={{id}}">1</a>
+        <a class="value" href="{{ link }}/2?u={{id}}">2</a>
+        <a class="value" href="{{ link }}/3?u={{id}}">3</a>
+        <a class="value" href="{{ link }}/4?u={{id}}">4</a>
+        <a class="value" href="{{ link }}/5?u={{id}}">5</a>
+        <a class="value" href="{{ link }}/6?u={{id}}">6</a>
+        <a class="value" href="{{ link }}/7?u={{id}}">7</a>
+        <a class="value" href="{{ link }}/8?u={{id}}">8</a>
+        <a class="value" href="{{ link }}/9?u={{id}}">9</a>
+        <a class="value" href="{{ link }}/10?u={{id}}">10</a>
+      </div>
+
+      <br />
+      <br />
+
+      <h4>Equipe | <strong>NLW</strong></h3>
+    </div>
+  </div>
+</body>
+
+</html>
