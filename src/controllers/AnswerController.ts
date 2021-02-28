@@ -3,12 +3,28 @@ import { getCustomRepository } from "typeorm";
 import { AppError } from "../errors/AppError";
 import { SurveyUsersRepository } from "../repositories/SurveyUsersRepository";
 import { UsersRepository } from "../repositories/UsersRepository";
+import * as yup from 'yup';
 
 class AnswerController {
 
   async execute(request: Request, response: Response) {
     const { value } = request.params;
     const { u } = request.query;
+
+    const paramSchema = yup.object().shape({
+      value: yup.number().required()
+    });
+
+    const querySchema = yup.object().shape({
+      u: yup.string().required()
+    });
+
+    try {
+      await paramSchema.validate(request.params, { abortEarly: false });
+      await querySchema.validate(request.query, { abortEarly: false });
+    } catch(err) {
+      throw new AppError(err);
+    }
 
     const surveyUsersRepository = getCustomRepository(SurveyUsersRepository);
     const usersRepository = getCustomRepository(UsersRepository);

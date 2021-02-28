@@ -1,11 +1,23 @@
 import { Request, Response } from "express";
 import { getCustomRepository, Not, IsNull } from "typeorm";
 import { SurveyUsersRepository } from "../repositories/SurveyUsersRepository";
+import * as yup from 'yup';
+import { AppError } from "../errors/AppError";
 
 class NpsController {
 
   async execute(request: Request, response: Response) {
     const { survey_id } = request.params;
+
+    const schema = yup.object().shape({
+      survey_id: yup.string().required()
+    });
+
+    try {
+      await schema.validate(request.params, { abortEarly: false });
+    } catch(err) {
+      throw new AppError(err);
+    }
 
     const surveyUsersRepository = getCustomRepository(SurveyUsersRepository);
 
