@@ -1,1 +1,5 @@
+.vscode
 node_modules
+src/database/database.sqlite
+src/database/database.test.sqlite
+yarn-error.log
